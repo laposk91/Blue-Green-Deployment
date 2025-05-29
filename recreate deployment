@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+spec:
+  replicas: 3
+  strategy:
+    type: Recreate  # This is the key for blue-green style deployment
+  selector:
+    matchLabels:
+      app: myapp
